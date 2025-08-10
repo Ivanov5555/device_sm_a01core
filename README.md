@@ -1,1 +1,2 @@
-# device_sm_a01core
+# omni_samsung_a01core
+⚠️ The repository is under revision.
