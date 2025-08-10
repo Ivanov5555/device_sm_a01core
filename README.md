@@ -1,0 +1,1 @@
+# device_sm_a01core
