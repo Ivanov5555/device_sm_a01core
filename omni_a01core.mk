@@ -18,7 +18,7 @@
 DEVICE_PATH := device/samsung/a01core
 
 # Inherit from common AOSP config
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
 # Inherit some common TWRP stuff.
 $(call inherit-product, vendor/omni/config/common.mk)
