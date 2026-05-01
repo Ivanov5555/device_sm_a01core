@@ -33,6 +33,8 @@ PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(DEVICE_PATH)/recovery/ro
 
 ## Device identifier. This must come after all inclusions
 
+PRODUCT_NAME := omni_a01core
+PRODUCT_DEVICE :=a01core
 PRODUCT_MODEL := Galaxy A01 Core
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
