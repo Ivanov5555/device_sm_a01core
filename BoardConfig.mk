@@ -15,7 +15,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-DEVICE_PATH := device/sm/a01core
+DEVICE_PATH := device/samsung/a01core
 
 # For building with minimal manifest #
 ALLOW_MISSING_DEPENDENCIES := true
@@ -100,8 +100,10 @@ PLATFORM_SECURITY_PATCH := 2025-11-05
 VENDOR_SECURITY_PATCH := 2025-11-05
 PLATFORM_VERSION := 10
 TW_INCLUDE_CRYPTO := true
-TW_INCLUDE_CRYPTO_FBE := true
-TW_INCLUDE_REPACKTOOLS := true
+TW_CRYPTO_FS_TYPE := "f2fs"
+TW_CRYPTO_REAL_BLKDEV := "/dev/block/platform/bootdevice/by-name/userdata"
+TW_CRYPTO_MNT_POINT := "/data"
+TW_CRYPTO_FS_OPTIONS := "noatime,nosuid,nodev,discard,usrquota,grpquota,fsync_mode=nobarrier,reserve_root=32768,resgid=5678	wait,check,,quota,reservedsize=128M,,resize,checkpoint=fs,fileencryption=aes-256-xts"
 
 # TWRP Configuration
 TW_EXCLUDE_DEFAULT_USB_INIT := true
@@ -109,7 +111,8 @@ TW_THEME := portrait_hdpi
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
 TW_MAX_BRIGHTNESS := 240
 TW_DEFAULT_BRIGHTNESS := 120
-TW_EXTRA_LANGUAGES := true
+TW_EXTRA_LANGUAGES := false
+TW_DEFAULT_LANGUAGE := ru
 TW_USE_TOOLBOX := true
 TW_HAS_DOWNLOAD_MODE := true
 TW_USE_NEW_MINADBD := true
@@ -129,8 +132,9 @@ TARGET_USES_MKE2FS := true
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 TW_DEVICE_VERSION := Matrosov,inc.
-# TW_CUSTOM_THEME := device/sm/a01core/twres
+# TW_CUSTOM_THEME := device/samsung/a01core/twres
 
 # LZMA Compression
+# OF_USE_LZMA_COMPRESSION :=1
 # LZMA_RAMDISK_TARGETS := recovery
 # BOARD_RAMDISK_USE_LZMA := true

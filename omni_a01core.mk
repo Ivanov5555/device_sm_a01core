@@ -15,13 +15,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-DEVICE_PATH := device/sm/a01core
+DEVICE_PATH := device/samsung/a01core
 
 # Inherit from common AOSP config
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
 # Inherit some common TWRP stuff.
-$(call inherit-product, vendor/omni/config/common.mk)
+$(call inherit-product, vendor/twrp/config/common.mk)
 
 # Inherit device configuration
 $(call inherit-product, $(DEVICE_PATH)/device.mk)
@@ -32,8 +32,16 @@ PRODUCT_PACKAGES += charger_res_images
 PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(DEVICE_PATH)/recovery/root,recovery/root)
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_NAME := omni_a01core
-PRODUCT_DEVICE := a01core
+
 PRODUCT_MODEL := Galaxy A01 Core
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+TARGET_DEVICE=a01core \
+PRODUCT_NAME=twrp_a01core \
+PRIVATE_BUILD_DESC="a01coreser-user 10 QP1A.190711.020 A013FPUU7AWA1 release-keys"
+
+BUILD_FINGERPRINT := samsung/a01coreser/a01core:10/QP1A.190711.020/A013FPUU7AWA1:user/release-keys
+
+PLATFORM_SECYRITY_PATCH := 2023-01-01
