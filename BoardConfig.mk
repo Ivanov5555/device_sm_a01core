@@ -100,10 +100,7 @@ PLATFORM_SECURITY_PATCH := 2025-11-05
 VENDOR_SECURITY_PATCH := 2025-11-05
 PLATFORM_VERSION := 10
 TW_INCLUDE_CRYPTO := true
-TW_CRYPTO_FS_TYPE := "f2fs"
-TW_CRYPTO_REAL_BLKDEV := "/dev/block/platform/bootdevice/by-name/userdata"
-TW_CRYPTO_MNT_POINT := "/data"
-TW_CRYPTO_FS_OPTIONS := "noatime,nosuid,nodev,discard,usrquota,grpquota,fsync_mode=nobarrier,reserve_root=32768,resgid=5678	wait,check,,quota,reservedsize=128M,,resize,checkpoint=fs,fileencryption=aes-256-xts"
+TW_INCLUDE_CRYPTO_FBE := true
 
 # TWRP Configuration
 TW_EXCLUDE_DEFAULT_USB_INIT := true
